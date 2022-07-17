@@ -21,7 +21,7 @@ function Support({getSurvey}) {
 
         dispatch({
             type: 'ADD_SUPPORT',
-            payload: {support}
+            payload: support
         })
             history.push('/comments');
     };

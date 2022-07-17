@@ -6,13 +6,13 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import {useState} from 'react';
 
-function Understanding ({getSurvey}) {
+function Understanding () {
 
     const dispatch = useDispatch();
     const history = useHistory();
 
     //variable for input
-    const [understanding, setUnderstanding] = useState('');
+    const [understanding, setUnderstanding] = useState(0);
 
     const submitFeed = (event) => {
         event.preventDefault();
@@ -20,7 +20,7 @@ function Understanding ({getSurvey}) {
 
         dispatch({
             type: 'ADD_UNDERSTANDING',
-            payload: {understanding}
+            payload: understanding
         })
             history.push('/support');
     };

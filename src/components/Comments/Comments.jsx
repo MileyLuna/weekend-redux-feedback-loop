@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import {useState} from 'react';
 
-function Comments ({getSurvey}) {
+function Comments () {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -19,7 +19,7 @@ function Comments ({getSurvey}) {
 
         dispatch({
             type: 'ADD_COMMENTS',
-            payload: {comments}
+            payload: comments
         })
             history.push('/review');
     };

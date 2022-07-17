@@ -19,7 +19,7 @@ function App() {
 
   const getSurvey = () => {
     axios
-    .get('/api/feedback')
+    .get('/feedback')
     .then(response => {
       dispatch ({ type: 'GET_SURVEYS', payload: response.data});
     }).catch (err => alert('error in client GET:', err))

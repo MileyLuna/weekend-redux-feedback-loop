@@ -9,20 +9,21 @@ import axios from 'axios';
 import {useState} from 'react';
 
 
-function Feeling({getSurvey}) {
+function Feeling() {
 
     const dispatch = useDispatch();
     const history = useHistory();
 
     //variable for input
-    const [feeling, setFeeling] = useState('');
+    const [feeling, setFeeling] = useState(0);
 
     const submitFeed = (event) => {
         event.preventDefault();
         console.log('submitFeed');
+        // if(!feeling)
         dispatch({
-            type: 'ADD_',
-            payload: {feeling}
+            type: 'ADD_FEELING',
+            payload: feeling
         })
         history.push('/understanding');
 

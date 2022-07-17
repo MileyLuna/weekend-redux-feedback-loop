@@ -1,11 +1,12 @@
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import {useState} from 'react';
+import { useState } from 'react';
 
 
-function Review ({getSurvey}) {
+function Review({ getSurvey }) {
     //const dispatch = useDispatch();
     const history = useHistory();
 
@@ -19,33 +20,51 @@ function Review ({getSurvey}) {
         console.log('clicked review');
 
         axios
-            .post('/api/feedback',{
+            .post('/feedback', {
                 feeling: feeling,
-                understanding:understanding,
+                understanding: understanding,
                 support: support,
                 comments: comments
             })
             // console.log(`feeling rating is: ${feeling}`)
             .then(response => {
-            getSurvey();
-            setFeeling('');
-
+                getSurvey();
             }).catch(err => {
                 console.log('error in client post:', err);
             });
-            history.push('/sucess');
-        };
+        history.push('/sucess');
+    };
 
-// will have post/axios/dispatch
+    // will have post/axios/dispatch
 
     return (
-        <>
-        <h1>Review Your Feedback</h1>
+        <div>
+            <h1>Review Your Feedback</h1>
 
-        //mapping goes here
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+            >
+                {/* <TextField
+                    label="comments"
+                    variant="standard"
+                    color="warning"
+                    focused
+                /> */}
+                <ul>
+                    <li>Feelings: {feeling} </li>
+                    <li>Understanding: {understanding}</li>
+                    <li>Support: {support}</li>
+                    <li>Comments: {comments} </li>
+                </ul>
+                <Button className="btn" onClick={submitForreal} variant="contained">Next</Button>
+            </Box>
 
-        <Button className="btn" onClick={submitForreal} variant="contained">Next</Button>
-        </>
+        </div>
     )
 }
 

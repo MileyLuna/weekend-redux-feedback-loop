@@ -11,7 +11,7 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 const surveyRouter = require('./modules/Router/survey.router')
-app.use('/api/feedback', surveyRouter);
+app.use('/feedback', surveyRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
