@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -17,12 +18,15 @@ function Understanding () {
     const submitFeed = (event) => {
         event.preventDefault();
         console.log('submitFeed');
-
+        if(!understanding){
+            alert('Must input value');
+        }else {
         dispatch({
             type: 'ADD_UNDERSTANDING',
             payload: understanding
         })
             history.push('/support');
+    }
     };
 
 
@@ -30,31 +34,28 @@ function Understanding () {
         <>
         <h1>How well are you understanding the content?</h1>
 
-        <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                {/* <TextField
-                    label="Feeling"
-                    variant="standard"
-                    color="warning"
-                    focused
-                /> */}
+                <TextField
+                    id="filled-number"
+                    label="Understanding"
+                    type="number"
+                    onChange={(event) => setUnderstanding(event.target.value)}
+                    value={understanding}
+                    size="small"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="filled"
+                />
 
-<input 
+            {/* <input 
                 value={understanding}
                 type="number"
-                onChange={(event) => setUnderstanding(event.target.value)} />
+                onChange={(event) => setUnderstanding(event.target.value)} /> */}
 
 
 
                 <Button className="btn" onClick={submitFeed}variant="contained">Next</Button>
 
-            </Box>
             
         </>
     )

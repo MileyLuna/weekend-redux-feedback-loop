@@ -57,7 +57,7 @@ function App() {
 							</Link>
 						</li>
             <li className='nav'>
-							<Link className='link' to='/comment'>
+							<Link className='link' to='/comments'>
 								comment
 							</Link>
 						</li>

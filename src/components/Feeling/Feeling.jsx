@@ -1,12 +1,12 @@
 import React from 'react';
 import '../Feeling/Feeling.css';
 import Box from '@mui/material/Box';
-// import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import {useState} from 'react';
+import { useState } from 'react';
 
 
 function Feeling() {
@@ -20,50 +20,46 @@ function Feeling() {
     const submitFeed = (event) => {
         event.preventDefault();
         console.log('submitFeed');
-        // if(!feeling)
+        if(!feeling){
+            alert('Must input value');
+        } else {
         dispatch({
             type: 'ADD_FEELING',
             payload: feeling
         })
         history.push('/understanding');
+        }
+    };
 
-        };
-        
 
     return (
-        <>
+        <div className="containter">
 
             <h1>How are you feeling today?</h1>
 
-            <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                {/* <TextField
-                    label="Feeling"
-                    variant="standard"
-                    color="warning"
-                    focused
-                /> */}
+                <TextField
+                    id="filled-number"
+                    label="feeling"
+                    type="number"
+                    onChange={(event) => setFeeling(event.target.value)}
+                    value={feeling}
+                    size="small"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    variant="filled"
+                />
 
-                <input 
-                value={feeling}
-                type="number"
-                onChange={(event) => setFeeling(event.target.value)} />
+                {/* <input
+                    value={feeling}
+                    onChange={(event) => setFeeling(event.target.value)} /> */}
 
 
 
                 <Button className="btn" onClick={submitFeed} variant="contained">Next</Button>
 
-            </Box>
 
-
-
-        </>
+        </div>
     )
 }
 

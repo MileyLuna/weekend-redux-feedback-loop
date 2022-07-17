@@ -35,26 +35,12 @@ function Review({ getSurvey }) {
         history.push('/sucess');
     };
 
-    // will have post/axios/dispatch
 
     return (
         <div>
             <h1>Review Your Feedback</h1>
 
-            <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                {/* <TextField
-                    label="comments"
-                    variant="standard"
-                    color="warning"
-                    focused
-                /> */}
+
                 <ul>
                     <li>Feelings: {feeling} </li>
                     <li>Understanding: {understanding}</li>
@@ -62,7 +48,7 @@ function Review({ getSurvey }) {
                     <li>Comments: {comments} </li>
                 </ul>
                 <Button className="btn" onClick={submitForreal} variant="contained">Next</Button>
-            </Box>
+
 
         </div>
     )

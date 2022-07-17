@@ -3,5 +3,7 @@ ul{
 }
 
 div{
-    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
