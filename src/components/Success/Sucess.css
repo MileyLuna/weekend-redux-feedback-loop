@@ -1,0 +1,12 @@
+.feedback, .thanks{
+    border: 1.5px solid black;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.thanks {
+    height: 450px;
+    text-align: center;
+    padding: 200px 0;
+}
