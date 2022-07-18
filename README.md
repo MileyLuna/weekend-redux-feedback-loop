@@ -6,63 +6,40 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
-# PROJECT NAME
+# Feedback Survey
 
 ## Description
 
-_Duration: 2 Week Sprint_
+_Duration: 5-6 hours_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
+This project allowed me to showcase my understanding of react/redux flow with usage of CRUD and Axios to create a feedback survey.
+
+This feedback survey has three questions; How are you feeling?, How well are you understanding the content?, and How well are you being supported? along with an optional Any comments you want to leave?.
+
+I struggled with the client side post. It was not posting it to the database. However, with some help from my classmates, we figured out the errors. Another spot I struggle with is CSS styling.
 
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
-- [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
+- Visual Studio Code
+- Postgres
 
 ## Installation
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
+1. Create a database with provided SQL in `data.sql` file.
+2. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries.
 
-If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
-
-1. Create a database named `your database name`,
-2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
 3. Open up your editor of choice and run an `npm install`
 4. Run `npm run server` in your terminal
 5. Run `npm run client` in your terminal
 6. The `npm run client` command will open up a new browser tab for you!
 
-## Usage
-How does someone use this application? Tell a user story here.
-
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
-
-
-## Built With
-
-List technologies and frameworks here
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
+If package.jason does not have react, redux, and logger:
+1. Run `npm install redux@4 react-redux@7`
+2. Run `npm install redux-logger@3`
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thanks to our insturctors - Liz and Dane for their guidance and dynamatic teaching skills. Last, but not least Thanks to all my classmates for their support and estatic attitude.
 
-## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
