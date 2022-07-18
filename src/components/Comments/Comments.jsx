@@ -16,25 +16,29 @@ function Comments () {
     const submitFeed = (event) => {
         event.preventDefault();
         console.log('submitFeed');
-        if(!comments){
-            alert('Must input value');
-        } else {
         dispatch({
             type: 'ADD_COMMENTS',
             payload: comments
         })
             history.push('/review');
-    }
     };
 
     return(
         <>
         <h1>Any comments you want to leave?</h1>
-
+        <p>*Optional*</p>
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
                 <TextField
                     id="filled-number"
                     label="Comments"
-                    type="number"
+                    type="text"
                     onChange={(event) => setComments(event.target.value)}
                     value={comments}
                     size="small"
@@ -53,7 +57,7 @@ function Comments () {
 
                 <Button className="btn" onClick={submitFeed} variant="contained">Next</Button>
 
-
+</Box>
 
         </>
     )

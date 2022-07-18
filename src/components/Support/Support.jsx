@@ -32,7 +32,14 @@ function Support({getSurvey}) {
     return (
         <>
             <h1>How well are you being supported?</h1>
-
+            <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
                 <TextField
                     id="filled-number"
                     label="Suport"
@@ -53,7 +60,7 @@ function Support({getSurvey}) {
             */}
 
                 <Button className="btn" onClick={submitFeed} variant="contained">Next</Button>
-
+                </Box>
             
         </>
             )

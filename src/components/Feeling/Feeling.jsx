@@ -36,7 +36,14 @@ function Feeling() {
         <div className="containter">
 
             <h1>How are you feeling today?</h1>
-
+            <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
                 <TextField
                     id="filled-number"
                     label="feeling"
@@ -58,7 +65,7 @@ function Feeling() {
 
                 <Button className="btn" onClick={submitFeed} variant="contained">Next</Button>
 
-
+                </Box>
         </div>
     )
 }

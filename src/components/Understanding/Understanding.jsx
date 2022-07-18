@@ -33,7 +33,14 @@ function Understanding () {
     return(
         <>
         <h1>How well are you understanding the content?</h1>
-
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
                 <TextField
                     id="filled-number"
                     label="Understanding"
@@ -56,7 +63,7 @@ function Understanding () {
 
                 <Button className="btn" onClick={submitFeed}variant="contained">Next</Button>
 
-            
+                </Box>     
         </>
     )
 }

@@ -29,6 +29,10 @@ function Review({ getSurvey }) {
             // console.log(`feeling rating is: ${feeling}`)
             .then(response => {
                 getSurvey();
+                dispatchEvent({
+                    type:'CLEAR',
+                });
+
             }).catch(err => {
                 console.log('error in client post:', err);
             });
@@ -47,7 +51,7 @@ function Review({ getSurvey }) {
                     <li>Support: {support}</li>
                     <li>Comments: {comments} </li>
                 </ul>
-                <Button className="btn" onClick={submitForreal} variant="contained">Next</Button>
+                <Button className="btn" onClick={submitForreal} variant="contained">Submit</Button>
 
 
         </div>

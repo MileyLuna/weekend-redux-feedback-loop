@@ -1,8 +1,10 @@
 import '../Success/Sucess.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { useHistory } from 'react-router-dom';
 
 function Sucess () {
+    const history = useHistory();
 
     const ending = () => {
         console.log('clicked ending');

@@ -41,7 +41,7 @@ function App() {
 								Home
 							</Link>
 						</li>
-						<li className='nav'>
+						{/* <li className='nav'>
 							<Link className='link' to='/feeling'>
 								feeling
 							</Link>
@@ -70,8 +70,8 @@ function App() {
 							<Link className='link' to='/sucess'>
 								sucess
 							</Link>
-						</li>
-					</ul>
+						</li>*/}
+					</ul> 
 
 
         
