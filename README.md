@@ -19,7 +19,6 @@ This feedback survey has three questions; How are you feeling?, How well are you
 I struggled with the client side post. It was not posting it to the database. However, with some help from my classmates, we figured out the errors. Another spot I struggle with is CSS styling.
 
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
 ### Prerequisites
 
